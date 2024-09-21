@@ -1,0 +1,38 @@
+Here are the concise versions of each section:
+
+---
+
+**Education**  
+Pursuing B.Tech at Pranveer Singh Institute of Technology (PSIT), with a focus on software development and engineering principles, engaging in hands-on projects to apply theoretical knowledge effectively.
+
+**Problem-Solving Expertise**  
+
+**Experience**  
+
+
+**Technical Skills**  
+Proficient in Java, Python, C++, MERN stack, SQL, NoSQL, Windows, and Kali Linux, with expertise in DSA, DBMS, and OS concepts, making me a versatile developer.
+
+---
+
+Let me know if these align with your needs!
+
+Here are the refined paragraphs, each around 40-50 words:
+
+---
+
+**Education**  
+
+
+**Problem-Solving Expertise**  
+With over 1200 problems solved on LeetCode and active streaks on both LeetCode and GeeksforGeeks, I have developed strong expertise in Data Structures and Algorithms (DSA). This extensive problem-solving experience has honed my coding skills, allowing me to approach complex challenges with confidence and efficiency.
+
+**Experience**  
+I have developed and deployed full-stack projects using the MERN stack and won the Buggify competition, demonstrating my debugging skills and problem-solving abilities. These experiences have equipped me with technical expertise, adaptability, and a keen eye for detail, essential for tackling complex real-world problems.
+
+**Technical Skills**  
+
+
+---
+
+Let me know if you need further adjustments!
