@@ -4,6 +4,7 @@ import book from "../assets/book.png";
 import pc from "../assets/pc.png";
 import finance from "../assets/finance.png";
 import Card from "./AboutCard.jsx";
+
 export default function App() {
   const data = [
     {
@@ -15,7 +16,7 @@ export default function App() {
     {
       img: finance,
       heading: "Problem Solver",
-      info:`Solved 1200+ problems on LeetCode with streaks on LeetCode and GFG, showcasing expertise in Data Structures and Algorithms (DSA) and strong problem-solving skills.`,
+      info: `Solved 1200+ problems on LeetCode with streaks on LeetCode and GFG, showcasing expertise in Data Structures and Algorithms (DSA) and strong problem-solving skills.`,
       span: 1,
     },
   ];
@@ -33,17 +34,17 @@ export default function App() {
       span: 2,
     },
   ];
-
+  
   return (
-    <div className="projects bg-gradient-to-b from-[#8f5d54] via-[#28183d] flex flex-col gap-[1rem] to-[#000] w-full h-auto items-center justify-center px-[4rem] py-2 border-0">
-      <h1 className="text-white text-[1000] text-bold text-3xl text-[1rem] text-white sm:text-5xl">
+    <div className="about  bg-gradient-to-t from-[#000] via-[#2b1942] to-[#bf5c55] flex flex-col gap-[1rem]  w-full h-auto items-center justify-center px-[4rem] py-2 border-0">
+      <h1 className=" heading text-[3.5rem] text-[#d39567] ">
         About me
       </h1>
-      <div className=" w-[80vw] r1 flex flex-col  gap-[1rem] justify-center items-center w-[85vw] h-auto sm:grid sm:grid-rows-1 sm:grid-cols-[2fr_1fr]">
-        <Card data={data} />
+      <div className=" w-[80vw] r1 flex flex-col  gap-[1rem] justify-center items-center w-[85vw]  h-auto sm:grid sm:grid-rows-1 sm:grid-cols-[2fr_1fr] overflow-hidden">
+        <Card className="card" data={data} />
       </div>
-      <div className="r1 flex gap-[1rem] justify-center items-center [16rem] flex-col w-[85vw]  sm:grid sm:grid-cols-[1fr_2fr] ">
-        <Card data={data2} />
+      <div className="r1 flex gap-[1rem] justify-center items-center [16rem] flex-col w-[85vw]  sm:grid sm:grid-cols-[1fr_2fr] overflow-hidden">
+        <Card className="card" data={data2} />
       </div>
     </div>
   );

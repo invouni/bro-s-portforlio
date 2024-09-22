@@ -23,10 +23,9 @@ const ContactUs = () => {
           publicKey: "_G24MM8H4iI9eBs8J",
         },
       );
-      console.log("SUCCESS!");
+      
       reset(); // Reset form after successful submission
     } catch (error) {
-      console.log("FAILED...", error.text);
       setErrorMessage("Failed to send email. Please try again.");
     }
   };
