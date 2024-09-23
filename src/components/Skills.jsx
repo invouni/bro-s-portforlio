@@ -12,14 +12,24 @@ import react from "../assets/react.png";
 import sql from "../assets/sql-server.png";
 
 const Skills = () => {
+  
   return (
     <div className="skills-container">
-      <h1 className=" w-full text-center text-[#d09666] text-bold text-[3rem] py-4 my-4 text-3xl sm:text-5xl" >Skills </h1>
-      <Marquee speed="120" class="py-8 w-full h-auto border-2 border-white" direction="left">
+      <h1 className=" w-full text-center text-[#d09666] text-bold text-[3rem] py-4 my-4 text-3xl sm:text-5xl">
+        Skills
+      </h1>
+      <Marquee
+        
+        pauseOnHover="true"
+        speed="120"
+        className="marquee  w-full h-auto"
+        direction={"right"}
+      >
+        
         <Skill name="HTML" icon={html5} />
         <Skill name="CSS" icon={css} />
         <Skill name="JS" icon={javascript} />
-        
+
         <Skill name="Python" icon={python} />
         <Skill name="Java" icon={java} />
         <Skill name="Next" icon={next} />

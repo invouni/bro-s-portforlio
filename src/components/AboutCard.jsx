@@ -1,15 +1,14 @@
 import React from "react";
-import gsap from 'gsap'
-
-
 const AboutCard = (props) => {
-  const data = (
+
+  
+const data = (
     <>
       {props.data.map((project, index) => {
         return (
           <div
             key={`${project.name}-${index}`}
-            className={`${index==0?"left":"right"}   border  border-crimson-500 bg-gradient-to-r from-[#28183d] to-[#9e5d54] project-btn rounded-md flex gap-2 items-center px-2 h-[100%] w-[100%] py-2`}
+            className={`${index==0?"left":"right"}   border  border-crimson-500 bg-gradient-to-r from-[#28183d] to-[#9e5d54] project-btn rounded-md flex gap-2 items-center px-2 h-[100%] w-[100%] py-2`} ref={index==0?props.leftRef:props.rightRef} 
           >
             <img
               className="w-[5rem] h-auto about-card-img"

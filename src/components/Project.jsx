@@ -1,5 +1,6 @@
 import React from 'react';
 import '../index.css'
+import { useRef } from 'react'
 
 const Project = (props) => {
   
@@ -7,9 +8,9 @@ const Project = (props) => {
     return (
       <div className={(props.even ? "left-project-card":"right-project-card")+" flex flex-col gap-[0.4rem]"} key={props.data.name}>
         <h1 className="project-index text-[2rem] text-[#dadada] sm:text-[3rem]">0{props.index}</h1>
-        <h1 className="project-name text-[1.7rem] text-[#dadada] font-[800] sm:text-[2.7rem]">{props.data.name}</h1>
+        <h1 className="project-name text-[1.q7rem] text-[#dadada] font-[800] sm:text-[2.7rem]">{props.data.name}</h1>
         <p className="project-data text-md text-[#dadada] px-4 sm:font-bold sm:text-lg ">{props.data.data}</p>
-        <div className="project-attrs attrs text-[#d09666] text-sm sm:text-sm"><span>Mongo db</span><span>python...</span></div>
+        <div className="project-attrs attrs text-[#d09666] text-sm sm:text-sm"><span className="elem">Mongo db</span><span className="elem">python...</span></div>
       </div>)
   }
   function getImg(src) {
@@ -18,7 +19,7 @@ const Project = (props) => {
       </div>)
   }
   return (
-    <div className="project w-[75vw] py-[1rem] bg-transparent flex flex-col justify-between gap-[1rem] items-center border-b sm:flex-row">
+    <div className="project w-[75vw] py-[1rem] bg-transparent flex flex-col justify-between gap-[1rem] items-center border-b sm:flex-row" ref={props.refVar}>
       {props.even && getInfo() || getImg("")}
       {props.even && getImg("") || getInfo()}
       

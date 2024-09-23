@@ -4,8 +4,14 @@ import book from "../assets/book.png";
 import pc from "../assets/pc.png";
 import finance from "../assets/finance.png";
 import Card from "./AboutCard.jsx";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef,useState } from "react";
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
-export default function App() {
+export default function Hero() {
   const data = [
     {
       img: book,
@@ -34,17 +40,51 @@ export default function App() {
       span: 2,
     },
   ];
-  
+  const [refs,changeRefs] = useState([useRef(null), useRef(null), useRef(null), useRef(null)]);
+  useGSAP(() => {
+    refs.forEach((ref, index) => {
+     
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ref.current,
+          start: 'top bottom',
+          end: 'bottom 60%',
+          scrub: 3,
+        },
+      });
+
+      timeline.from(ref.current, {
+        x: index < 2 ? '-150%' : '150%', // Left refs move left, right refs move right
+        opacity: 0,
+        duration: 0.5,
+      }).from(ref.current.querySelector('.about-card-img'), {
+          scale: 0,
+          duration: 0.3,
+        }).from(ref.current.querySelector('.about-h'),{
+        y: "-100%",
+        opacity: 0,
+      }).from(ref.current.querySelector('.about-p'),{
+        x: "100%",
+        opacity: 0,
+      })
+
+      
+    });
+  });
+
   return (
-    <div className="about  bg-gradient-to-t from-[#000] via-[#2b1942] to-[#bf5c55] flex flex-col gap-[1rem]  w-full h-auto items-center justify-center px-[4rem] py-2 border-0">
-      <h1 className=" heading text-[3.5rem] text-[#d39567] ">
-        About me
-      </h1>
+    <div className="about overflow-hidden  bg-gradient-to-t from-[#000] via-[#2b1942] to-[#bf5c55] flex flex-col gap-[1rem]  w-full h-auto items-center justify-center px-[4rem] py-2 border-0">
+      <h1 className=" heading text-[3.5rem] text-[#d39567] ">About me</h1>
       <div className=" w-[80vw] r1 flex flex-col  gap-[1rem] justify-center items-center w-[85vw]  h-auto sm:grid sm:grid-rows-1 sm:grid-cols-[2fr_1fr] overflow-hidden">
-        <Card className="card" data={data} />
+        <Card rightRef={refs[2]} leftRef={refs[0]} data={data} />
       </div>
       <div className="r1 flex gap-[1rem] justify-center items-center [16rem] flex-col w-[85vw]  sm:grid sm:grid-cols-[1fr_2fr] overflow-hidden">
-        <Card className="card" data={data2} />
+        <Card
+          rightRef={refs[1]}
+          leftRef={refs[3]}
+          className="card"
+          data={data2}
+        />
       </div>
     </div>
   );
