@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from "./navBar.jsx";
 import "../index.css";
 import poto from "../assets/poto.png";
 import icon2 from "../assets/icon2.png";
@@ -48,7 +47,7 @@ const Hero = (  ) => {
   })
   return (
     <div  className="hero overflow-hidden w-full h-auto bg-gradient-to-b from-[#000] via-[#2b1942] to-[#bf5c55] border-0">
-      <Nav  />
+    
       <div className="hero-content flex flex-col items-center justify-center h-auto w-auto mx-auto py-[1rem]">
         <div className="overflow-hidden flex flex-col items-center justify-center">
           <h1 ref={headingRef1} className="name text-[#98b4ce] text-[3rem] text-center p-0 m-0 sm:text-[6rem]">
